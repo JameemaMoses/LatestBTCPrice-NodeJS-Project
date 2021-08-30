@@ -1,6 +1,6 @@
 // Below code is completed and working which is done using HTTP module of Node.js
-const AxiosClient = require('./axiosHTTPClient');
-const logger = require('./logger');
+const AxiosClient = require('../Client/axiosHTTPClient');
+const logger = require('../logger/logger');
 const http = require('http');
 const url = require('url');
 

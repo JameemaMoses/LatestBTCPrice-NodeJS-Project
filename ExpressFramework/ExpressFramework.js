@@ -1,6 +1,6 @@
 // The Below code is completed using Express framework
-const AxiosClient = require('./axiosHTTPClient');
-const logger = require('./logger');
+const AxiosClient = require('../Client/axiosHTTPClient');
+const logger = require('../logger/logger');
 const express = require('express');
 const expressApp = express();
 
@@ -29,7 +29,7 @@ expressApp.get('/:currency',async(req,res) => {
             res.send(`1 BTC = $${BTCValue} ${BTCSymbol} at ${new Date().toISOString()}`);
             logger.info(`Viewing the data of BTC Value in ${BTCSymbol}`);
             }  else {
-                res.send(`The BTC value for the given currency ${param} doesn't exist.`);
+                res.status(404).send(`The BTC value for the given currency ${param} doesn't exist.`);
                 logger.info(`The BTC value for the given currency ${param} doesn't exist.`);
             }    
         }
